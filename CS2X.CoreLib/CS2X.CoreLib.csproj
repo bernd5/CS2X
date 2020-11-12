@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 		<RootNamespace>System</RootNamespace>
 
 		<!-- Ignore common warnings for unsupported CS2X feature subset -->
@@ -12,9 +12,19 @@
 		<NoCompilerStandardLib>true</NoCompilerStandardLib>
 		<DisableImplicitFrameworkReferences>true</DisableImplicitFrameworkReferences>
 
+		<Configurations>Debug</Configurations><!--TEST-->
+
     <!-- Set CoreLib settings -->
 		<RuntimeMetadataVersion>v4.0.30319</RuntimeMetadataVersion>
   </PropertyGroup>
+
+	<PropertyGroup>
+		<AssemblyName>System.Private.CoreLib</AssemblyName>
+		<AssemblyVersion>5.0.0.0</AssemblyVersion>
+		<ExcludeAssemblyInfoPartialFile>true</ExcludeAssemblyInfoPartialFile>
+		<GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+		<Description>$(AssemblyName)</Description>
+	</PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
